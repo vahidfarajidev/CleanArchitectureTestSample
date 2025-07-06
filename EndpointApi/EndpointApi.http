@@ -1,0 +1,6 @@
+@EndpointApi_HostAddress = http://localhost:5190
+
+GET {{EndpointApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
