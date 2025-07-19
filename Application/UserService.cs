@@ -2,7 +2,7 @@ using Domain;
 
 namespace Application
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private readonly IUserRepository _repo;
         private readonly IUnitOfWork _unitOfWork;

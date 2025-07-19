@@ -8,17 +8,17 @@ namespace EndpointApi.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly UserService _service;
+        private readonly IUserService _userService;
 
-        public UsersController(UserService service)
+        public UsersController(IUserService userService)
         {
-            _service = service;
+            _userService = userService;
         }
 
         [HttpPost]
         public IActionResult Add(AddUserDto dto)
         {
-            _service.AddUser(dto);
+            _userService.AddUser(dto);
             return Ok();
         }
 
@@ -28,7 +28,7 @@ namespace EndpointApi.Controllers
             if (id != dto.Id)
                 return BadRequest("ID in route does not match ID in body");
 
-            _service.EditUser(dto);
+            _userService.EditUser(dto);
             return Ok();
         }
     }
